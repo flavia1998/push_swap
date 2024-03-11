@@ -22,15 +22,18 @@ void swap_first_two(stack_t **head)
 void sa(stacks_t *stacks)
 {
     swap_first_two(&stacks->stack_a);
+    ft_printf("sa\n");
 }
 
 void sb(stacks_t *stacks)
 {
     swap_first_two(&stacks->stack_b);
+    ft_printf("sb\n");
 }
 
 void ss(stacks_t *stacks)
 {
     sa(stacks);
     sb(stacks);
+     ft_printf("ss\n");
 }

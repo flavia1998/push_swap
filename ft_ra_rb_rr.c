@@ -19,6 +19,7 @@ void ra(stacks_t *stacks)
         }
         stack = stack->next;
     }
+    ft_printf("ra\n");
 }
 
 void rb (stacks_t *stacks)
@@ -41,10 +42,12 @@ void rb (stacks_t *stacks)
        }
        stack =stack->next;
     }
+    ft_printf("rb\n");
 }
 
 void rr(stacks_t *stacks)
 {
     ra(stacks);
     rb(stacks);
+    ft_printf("rr\n");
 }

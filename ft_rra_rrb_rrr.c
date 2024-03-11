@@ -17,6 +17,7 @@ void rra(stacks_t *stacks)
     last_element->next = stacks->stack_a;
     stacks->stack_a = last_element;
     before_last_element->next = NULL;
+    ft_printf("rra\n");
 }
 
 void rrb(stacks_t *stacks)
@@ -36,10 +37,12 @@ void rrb(stacks_t *stacks)
     last_element->next = stacks->stack_b;
     stacks->stack_b = last_element;
     before_last_element->next = NULL;
+    ft_printf("rrb\n");
 }
 
 void rrr(stacks_t *stacks)
 {
     rra(stacks);
     rrb(stacks);
+    ft_printf("rrr\n");
 }
