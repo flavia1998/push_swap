@@ -41,24 +41,26 @@ int check_if_str(int argc, char **argv)
 
 	i = 0;
 	j = 1;
-	while (i < argc)
+
+	while (j < argc)
 	{
-		while (j < argc)
+		i = 0;
+		while (argv[j][i])
 		{
-			if (argv[j][i] < 42 || argv[j][i] > 57)
+			if (argv[j][i] < 48 || argv[j][i] > 57 )
 			{
-				return 1;
+				return 0;
 			}
-			j++;
+			i++;
 		}
-		i++;
+		j++;
 	}
-	return 0;
+	return 1;
 }
 
-void	ft_error(void)
-{	
-	write (2, "Error\n", 6);
+void ft_error(void)
+{
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -81,13 +83,12 @@ int ft_atoll(const char *nptr)
 		result = result * 10 + (*nptr - '0');
 		nptr++;
 	}
-	if ((result * sign > INT_MAX) || (result * sign < INT_MIN) )
+	if ((result * sign > INT_MAX) || (result * sign < INT_MIN))
 	{
 		ft_error();
 	}
 	return result * sign;
 }
-
 
 int count_nodes(stack_t *head)
 {

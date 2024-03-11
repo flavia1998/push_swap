@@ -43,7 +43,7 @@ void print_stacks(stacks_t *stacks)
 
 int check_arg(int argc, char **argv)
 {
-	if (check_arguments_repeat(argc, argv) == 1 || check_if_str(argc, argv) == 1)
+	if (check_arguments_repeat(argc, argv) == 1 || check_if_str(argc, argv) == 0)
 	{
 		return 0;
 	}
@@ -72,6 +72,5 @@ int main(int argc, char **argv)
 		i++;
 	}
 	sort_stack(stacks);
-	print_list(stacks->stack_a);
 	return 0;
 }

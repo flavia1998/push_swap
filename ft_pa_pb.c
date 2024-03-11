@@ -14,7 +14,7 @@ void pa(stacks_t *stacks)
     stacks->stack_a = stacks->stack_b;
 
     stacks->stack_b = stack_b_next;
-
+    ft_printf("pa\n");
 }
 
 void pb(stacks_t *stacks)
@@ -31,5 +31,6 @@ void pb(stacks_t *stacks)
     stacks->stack_b = stacks->stack_a;
 
     stacks->stack_a = stack_a_next;
+     ft_printf("pb\n");
 
 }
