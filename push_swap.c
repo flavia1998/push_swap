@@ -54,16 +54,17 @@ int main(int argc, char **argv)
 {
 	int i;
 	int number;
+	int j;
 	stacks_t *stacks = NULL;
 	stacks = malloc(sizeof(stack_t));
 
 	i = 1;
-	if (argc < 2)
-		return 0;
-	if (check_arg(argc, argv) == 0)
-		ft_error();
+	j = 0;
+
 	while (i < argc)
 	{
+		if (check_arg(argc, argv) == 0 || argv[i][j] < '0' || argv[i][j] >'9')
+			ft_error();
 		number = ft_atoll(argv[i]);
 		if (stacks->stack_a == NULL)
 			stacks->stack_a = create_node(number);
@@ -71,6 +72,9 @@ int main(int argc, char **argv)
 			push_end(stacks->stack_a, number);
 		i++;
 	}
+	// print_stacks(stacks);
 	sort_stack(stacks);
+	// print_stacks(stacks);
+	free(stacks->stack_a);
 	return 0;
 }

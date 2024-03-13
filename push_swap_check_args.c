@@ -47,10 +47,16 @@ int check_if_str(int argc, char **argv)
 		i = 0;
 		while (argv[j][i])
 		{
-			if (argv[j][i] < 48 || argv[j][i] > 57 )
+			if ((argv[j][i] < 48 || argv[j][i] > 57) && (argv[j][i] != '-' && argv[j][i] != '+'))
 			{
 				return 0;
 			}
+
+			if (argv[j][0] == '0' && argv[j][1])
+			{
+				return 0;
+			}
+
 			i++;
 		}
 		j++;
@@ -64,30 +70,32 @@ void ft_error(void)
 	exit(1);
 }
 
-int ft_atoll(const char *nptr)
+int ft_atoll(const char *str)
 {
-	long long int result;
-	int sign;
+	int mod;
+	long long int i;
 
-	sign = 1;
-	result = 0;
-
-	while (*nptr == ' ' || *nptr == '\n' || *nptr == '\t')
-		nptr++;
-	if (*nptr == '-')
-		sign = sign * (-1);
-	if (*nptr == '+' || *nptr == '-')
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
+	i = 0;
+	mod = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' || *str == '\v' || *str == '\r')
+		str++;
+	if (*str == '-')
 	{
-		result = result * 10 + (*nptr - '0');
-		nptr++;
+		mod = -1;
+		str++;
 	}
-	if ((result * sign > INT_MAX) || (result * sign < INT_MIN))
+	else if (*str == '+')
+		str++;
+	while (*str)
 	{
+		if (!ft_isdigit(*str))
+			ft_error();
+		i = i * 10 + (*str - 48);
+		str++;
+	}
+	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
 		ft_error();
-	}
-	return result * sign;
+	return (mod * i);
 }
 
 int count_nodes(stack_t *head)
