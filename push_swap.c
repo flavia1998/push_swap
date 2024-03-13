@@ -54,12 +54,10 @@ int main(int argc, char **argv)
 {
 	int i;
 	int number;
-	int j;
 	stacks_t *stacks = NULL;
 	stacks = malloc(sizeof(stack_t));
 
 	i = 1;
-	j = 0;
 	while (i < argc)
 	{
 		if (check_arg(argc, argv) == 0)

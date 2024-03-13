@@ -47,7 +47,7 @@ int check_if_str(int argc, char **argv)
 		i = 0;
 		while (argv[j][i])
 		{
-			if ((argv[j][i] < 48 || argv[j][i] > 57) && (argv[j][i] != '-' && argv[j][i] != '+'))
+			if ((argv[j][i] < 48 || argv[j][i] > 57) && (argv[j][i] != '-' || argv[j][i] != '+'))
 			{
 				return 0;
 			}
