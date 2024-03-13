@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void ra(stacks_t *stacks)
+void ra_log(stacks_t *stacks, int log)
 {
     stack_t *keep_stack_a;
 
@@ -19,10 +19,12 @@ void ra(stacks_t *stacks)
         }
         stack = stack->next;
     }
-    write(1,"ra\n",3);
+
+    if (log == 1)
+        write(1, "ra\n", 3);
 }
 
-void rb (stacks_t *stacks)
+void rb_log(stacks_t *stacks, int log)
 {
     stack_t *keep_stack_b;
 
@@ -35,19 +37,30 @@ void rb (stacks_t *stacks)
 
     while (stack)
     {
-       if (stack->next == NULL)
-       {
+        if (stack->next == NULL)
+        {
             stack->next = keep_stack_b;
             break;
-       }
-       stack =stack->next;
+        }
+        stack = stack->next;
     }
-    write(1,"rb\n",3);
+    if (log == 1)
+        write(1, "rb\n", 3);
+}
+
+void ra(stacks_t *stacks)
+{
+    ra_log(stacks, 1);
+}
+
+void rb(stacks_t *stacks)
+{
+    rb_log(stacks, 1);
 }
 
 void rr(stacks_t *stacks)
 {
-    ra(stacks);
-    rb(stacks);
-    write(1,"rr\n",3);
+    ra_log(stacks, 0);
+    rb_log(stacks, 0);
+    write(1, "rr\n", 3);
 }

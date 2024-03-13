@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void rra(stacks_t *stacks)
+void rra_log(stacks_t *stacks, int log)
 {
     stack_t *last_element;
     stack_t *before_last_element;
@@ -17,10 +17,11 @@ void rra(stacks_t *stacks)
     last_element->next = stacks->stack_a;
     stacks->stack_a = last_element;
     before_last_element->next = NULL;
-    ft_printf("rra\n");
+    if (log == 1)
+        write(1, "rra\n", 4);
 }
 
-void rrb(stacks_t *stacks)
+void rrb_log(stacks_t *stacks, int log)
 {
     stack_t *last_element;
     stack_t *before_last_element;
@@ -37,12 +38,23 @@ void rrb(stacks_t *stacks)
     last_element->next = stacks->stack_b;
     stacks->stack_b = last_element;
     before_last_element->next = NULL;
-    ft_printf("rrb\n");
+    if (log == 1)
+        write(1, "rrb\n", 4);
+}
+
+void rra(stacks_t *stacks)
+{
+    rra_log(stacks, 1);
+}
+
+void rrb(stacks_t *stacks)
+{
+    rrb_log(stacks, 1);
 }
 
 void rrr(stacks_t *stacks)
 {
-    rra(stacks);
-    rrb(stacks);
-    ft_printf("rrr\n");
+    rra_log(stacks, 0);
+    rrb_log(stacks, 0);
+    write(1, "rrr\n", 4);
 }

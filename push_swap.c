@@ -57,11 +57,12 @@ int main(int argc, char **argv)
 	stacks_t *stacks = NULL;
 	stacks = malloc(sizeof(stack_t));
 
+	if (check_arg(argc, argv) == 0 || argv[1][0] < '0' || argv[1][0] > '9')
+		ft_error();
+
 	i = 1;
 	while (i < argc)
 	{
-		if (check_arg(argc, argv) == 0)
-			ft_error();
 		number = ft_atoll(argv[i]);
 		if (stacks->stack_a == NULL)
 			stacks->stack_a = create_node(number);
