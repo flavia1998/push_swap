@@ -60,10 +60,9 @@ int main(int argc, char **argv)
 
 	i = 1;
 	j = 0;
-
 	while (i < argc)
 	{
-		if (check_arg(argc, argv) == 0 || argv[i][j] < '0' || argv[i][j] >'9')
+		if (check_arg(argc, argv) == 0)
 			ft_error();
 		number = ft_atoll(argv[i]);
 		if (stacks->stack_a == NULL)
@@ -72,9 +71,7 @@ int main(int argc, char **argv)
 			push_end(stacks->stack_a, number);
 		i++;
 	}
-	// print_stacks(stacks);
 	sort_stack(stacks);
-	// print_stacks(stacks);
 	free(stacks->stack_a);
 	return 0;
 }
