@@ -12,56 +12,23 @@
 
 #include "push_swap.h"
 
-int check_arguments_repeat(int argc, char **argv)
+int ft_check_duplicates(stack_t *stack)
 {
-	int i;
-	int j;
+	stack_t *tmp;
 
-	i = 1;
-	while (i < argc - 1)
+	while (stack)
 	{
-		j = i + 1;
-		while (j < argc)
+		tmp = stack->next;
+		while (tmp)
 		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
-			{
-				return 1;
-			}
-			j++;
+			if (stack->number == tmp->number)
+				return (1);
+			tmp = tmp->next;
 		}
-		i++;
+		stack = stack->next;
 	}
-	return 0;
-}
 
-int check_if_str(int argc, char **argv)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 1;
-
-	while (j < argc)
-	{
-		i = 0;
-		while (argv[j][i])
-		{
-			if ((argv[j][i] < 48 || argv[j][i] > 57) && (argv[j][i] != '-' || argv[j][i] != '+'))
-			{
-				return 0;
-			}
-
-			if (argv[j][0] == '0' && argv[j][1])
-			{
-				return 0;
-			}
-
-			i++;
-		}
-		j++;
-	}
-	return 1;
+	return (0);
 }
 
 void ft_error(void)

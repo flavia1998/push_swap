@@ -13,6 +13,29 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+void fill_stack(int argc, char **argv, stacks_t *stacks)
+{
+	int number;
+	int i;
+	i = 1;
+	while (i < argc)
+	{
+		number = ft_atoll(argv[i]);
+		if (stacks->stack_a == NULL)
+			stacks->stack_a = create_node(number);
+		else
+			push_end(stacks->stack_a, number);
+		i++;
+	}
+}
+
+void free_stacks(stacks_t *stacks)
+{
+	free(stacks->stack_a);
+	free(stacks->stack_b);
+	free(stacks);
+}
+
 void print_stacks(stacks_t *stacks)
 {
 	stack_t *aux_a = stacks->stack_a;
@@ -41,36 +64,36 @@ void print_stacks(stacks_t *stacks)
 	}
 }
 
-int check_arg(int argc, char **argv)
+int check_arg(char **argv)
 {
-	if (check_arguments_repeat(argc, argv) == 1 || check_if_str(argc, argv) == 0)
-	{
+	if (!argv[1][0])
 		return 0;
-	}
+	if (argv[1][0] == '-' && !argv[1][1])
+		return 0;
+	if (argv[1][0] == '+' && !argv[1][1])
+		return 0;
 	return 1;
 }
 
 int main(int argc, char **argv)
 {
-	int i;
-	int number;
 	stacks_t *stacks = NULL;
 	stacks = malloc(sizeof(stack_t));
 
-	if (check_arg(argc, argv) == 0 || argv[1][0] < '0' || argv[1][0] > '9')
+	if (argc < 2)
+		return 0;
+	if (check_arg(argv) == 0)
 		ft_error();
 
-	i = 1;
-	while (i < argc)
+	fill_stack(argc, argv, stacks);
+
+	if (ft_check_duplicates(stacks->stack_a) == 1)
 	{
-		number = ft_atoll(argv[i]);
-		if (stacks->stack_a == NULL)
-			stacks->stack_a = create_node(number);
-		else
-			push_end(stacks->stack_a, number);
-		i++;
+		ft_error();
+		free_stacks(stacks);
 	}
+
 	sort_stack(stacks);
-	free(stacks->stack_a);
+	free_stacks(stacks);
 	return 0;
 }
