@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int is_stack_sorted(stacks_t *stacks)
+int is_stack_sorted(t_stacks *stacks)
 {
 	stack_t *aux;
 	aux = stacks->stack_a;
@@ -60,7 +60,7 @@ int ft_max(stack_t *a)
 
 // This function sort the stack if there are only
 // three elements in the stack.
-void ft_sort_three(stacks_t *stacks)
+void ft_sort_three(t_stacks *stacks)
 {
 
 	if (ft_min(stacks->stack_a) == stacks->stack_a->number)

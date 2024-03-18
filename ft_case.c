@@ -3,7 +3,7 @@
 
 // This function calculates the required amount of rotation.
 // Calculations are done for ra+rb case.
-int ft_case_rarb_a(stacks_t *stacks, int c)
+int ft_case_rarb_a(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -15,7 +15,7 @@ int ft_case_rarb_a(stacks_t *stacks, int c)
 
 // This function calculates the required amount of rotation.
 // Calculations are done for rra+rrb case.
-int ft_case_rrarrb_a(stacks_t *stacks, int c)
+int ft_case_rrarrb_a(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -29,7 +29,7 @@ int ft_case_rrarrb_a(stacks_t *stacks, int c)
 
 // This function calculates the required amount of rotation.
 // Calculations are done for ra+rrb case.
-int ft_case_rarrb_a(stacks_t *stacks, int c)
+int ft_case_rarrb_a(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -42,7 +42,7 @@ int ft_case_rarrb_a(stacks_t *stacks, int c)
 
 // This function calculates the required amount of rotation.
 // Calculations are done for rra+rb case.
-int ft_case_rrarb_a(stacks_t *stacks, int c)
+int ft_case_rrarb_a(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -57,7 +57,7 @@ int ft_case_rrarb_a(stacks_t *stacks, int c)
 // we should rotate the stacks together.
 // Because after a certain amoun of rotate, we will
 // proceed only with one stack rotation.
-int ft_case_rarb(stacks_t *stacks, int c)
+int ft_case_rarb(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -72,7 +72,7 @@ int ft_case_rarb(stacks_t *stacks, int c)
 // rotation. Since here we have reverse rotate,rather than index number,
 // we check reverse index number which is
 // calculated by list_size - index_number.
-int ft_case_rrarrb(stacks_t *stacks, int c)
+int ft_case_rrarrb(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -86,7 +86,7 @@ int ft_case_rrarrb(stacks_t *stacks, int c)
 
 // Again, this function makes similar calculations.
 // This function do same calculations for rra+rb case.
-int ft_case_rrarb(stacks_t *stacks, int c)
+int ft_case_rrarb(t_stacks *stacks, int c)
 {
 	int i;
 
@@ -99,7 +99,7 @@ int ft_case_rrarb(stacks_t *stacks, int c)
 
 // Again, this function makes similar calculations.
 // This function do same calculations for ra+rrb case.
-int ft_case_rarrb(stacks_t *stacks, int c)
+int ft_case_rarrb(t_stacks *stacks, int c)
 {
 	int i;
 

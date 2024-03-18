@@ -19,7 +19,7 @@ int ft_find_index(stack_t *a, int number)
 // This function finds the correct place of the number in stack_b.
 // In other words, it check what index number nbr_push will get
 // after it is being pushed to the stack_b.
-int ft_find_place_b(stacks_t *stacks, int nbr_push)
+int ft_find_place_b(t_stacks *stacks, int nbr_push)
 {
 	
 	int i;
@@ -47,7 +47,7 @@ int ft_find_place_b(stacks_t *stacks, int nbr_push)
 // This function finds the correct place of the number in stack_a.
 // In other words, it check what index number nbr_push will get
 // after it is being pushed to the stack_a.
-int ft_find_place_a(stacks_t *stacks, int nbr_push)
+int ft_find_place_a(t_stacks *stacks, int nbr_push)
 {
 	int i;
 	stack_t *tmp;

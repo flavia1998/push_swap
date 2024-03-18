@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void fill_stack(int argc, char **argv, stacks_t *stacks)
+void fill_stack(int argc, char **argv, t_stacks *stacks)
 {
 	int number;
 	int i;
@@ -29,14 +29,14 @@ void fill_stack(int argc, char **argv, stacks_t *stacks)
 	}
 }
 
-void free_stacks(stacks_t *stacks)
+void free_stacks(t_stacks *stacks)
 {
 	free(stacks->stack_a);
 	free(stacks->stack_b);
 	free(stacks);
 }
 
-void print_stacks(stacks_t *stacks)
+void print_stacks(t_stacks *stacks)
 {
 	stack_t *aux_a = stacks->stack_a;
 	stack_t *aux_b = stacks->stack_b;
@@ -77,7 +77,7 @@ int check_arg(char **argv)
 
 int main(int argc, char **argv)
 {
-	stacks_t *stacks = NULL;
+	t_stacks *stacks = NULL;
 	stacks = malloc(sizeof(stack_t));
 
 	if (argc < 2)

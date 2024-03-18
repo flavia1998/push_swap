@@ -5,7 +5,7 @@
 // course, after rotation there is always one push
 // operation is left to do which i embeded to code.
 // Function is used during push from B to A.
-int ft_rotate_type_ba(stacks_t *stacks)
+int ft_rotate_type_ba(t_stacks *stacks)
 {
 	int i;
 	stack_t *tmp;
@@ -32,7 +32,7 @@ int ft_rotate_type_ba(stacks_t *stacks)
 // course, after rotation there is always one push
 // operation is left to do which i embeded to code.
 // Function is used during push from A to B.
-int ft_rotate_type_ab(stacks_t *stacks)
+int ft_rotate_type_ab(t_stacks *stacks)
 {
 	int i;
 	stack_t *tmp;

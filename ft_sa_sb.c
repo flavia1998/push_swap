@@ -19,31 +19,31 @@ void swap_first_two(stack_t **head)
     *head = second;
 }
 
-void sa_log(stacks_t *stacks, int log)
+void sa_log(t_stacks *stacks, int log)
 {
     swap_first_two(&stacks->stack_a);
     if (log == 1)
         write(1, "sa\n", 3);
 }
 
-void sb_log(stacks_t *stacks, int log)
+void sb_log(t_stacks *stacks, int log)
 {
     swap_first_two(&stacks->stack_b);
     if (log == 1)
         write(1, "sb\n", 3);
 }
 
-void sa(stacks_t *stacks)
+void sa(t_stacks *stacks)
 {
     sa_log(stacks, 1);
 }
 
-void sb(stacks_t *stacks)
+void sb(t_stacks *stacks)
 {
     sb_log(stacks, 1);
 }
 
-void ss(stacks_t *stacks)
+void ss(t_stacks *stacks)
 {
     sa_log(stacks, 0);
     sb_log(stacks, 0);

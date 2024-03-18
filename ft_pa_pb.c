@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void pa(stacks_t *stacks)
+void pa(t_stacks *stacks)
 {
     stack_t *stack_b_next;
 
@@ -17,7 +17,7 @@ void pa(stacks_t *stacks)
     write(1, "pa\n", 3);
 }
 
-void pb(stacks_t *stacks)
+void pb(t_stacks *stacks)
 {
     stack_t *stack_a_next;
 

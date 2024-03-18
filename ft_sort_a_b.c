@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void sort_stack(stacks_t *stacks)
+void sort_stack(t_stacks *stacks)
 {
 	if ((stacks->stack_a->next == NULL))
 		return;
@@ -15,7 +15,7 @@ void sort_stack(stacks_t *stacks)
 	ft_sort(stacks);
 }
 // This function sort and push stacks until 3 members left behind.
-void ft_sort_b_till_3(stacks_t *stacks)
+void ft_sort_b_till_3(t_stacks *stacks)
 {
 	int i;
 	stack_t *tmp;
@@ -46,7 +46,7 @@ void ft_sort_b_till_3(stacks_t *stacks)
 // the stack_b is sorted. When three elements are left,
 // it calls the ft_sort_three function to sort left over
 // elements in stack_a.
-void ft_sort_b(stacks_t *stacks)
+void ft_sort_b(t_stacks *stacks)
 {
 	if (count_nodes(stacks->stack_a) > 3 && !is_stack_sorted(stacks))
 		pb(stacks);
@@ -60,7 +60,7 @@ void ft_sort_b(stacks_t *stacks)
 
 // This function is pushing back the elements from stack_b
 // to stack_a until stack_b is empty.
-void ft_sort_a(stacks_t *stacks)
+void ft_sort_a(t_stacks *stacks)
 {
 	int i;
 	stack_t *tmp;
@@ -94,7 +94,7 @@ void ft_sort_a(stacks_t *stacks)
 // sorted at the end, the minimum number have to
 // at the top of the stack_a. So, it simply brings
 // the smallest number of the stack_a to the top.
-void ft_sort(stacks_t *stacks)
+void ft_sort(t_stacks *stacks)
 {
 	int i;
 
