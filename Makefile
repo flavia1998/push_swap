@@ -6,7 +6,7 @@ AR				=	ar
 ARFLAGS 		=	rcs
 RM				=	rm -rf
 
-SRC				=  ft_aux ft_find ft_rotate ft_apply ft_case ft_sort_a_b push_swap_aux_list push_swap ft_sa_sb push_swap_check_args ft_pa_pb ft_ra_rb_rr ft_rra_rrb_rrr
+SRC				=  ft_aux ft_find ft_rotate ft_apply ft_case_a ft_case_b ft_sort_a_b push_swap_aux_list push_swap ft_sa_sb push_swap_check_args ft_pa_pb ft_ra_rb_rr ft_rra_rrb_rrr
 SRCS 			=	$(addsuffix .c, $(SRC))
 
 OBJS 			= ${SRCS:.c=.o} 

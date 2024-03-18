@@ -8,7 +8,7 @@
 int ft_rotate_type_ba(t_stacks *stacks)
 {
 	int i;
-	stack_t *tmp;
+	t_stack *tmp;
 
 	tmp = stacks->stack_b;
 	i = ft_case_rrarrb_a(stacks, stacks->stack_b->number);
@@ -35,7 +35,7 @@ int ft_rotate_type_ba(t_stacks *stacks)
 int ft_rotate_type_ab(t_stacks *stacks)
 {
 	int i;
-	stack_t *tmp;
+	t_stack *tmp;
 
 	tmp = stacks->stack_a;
 	i = ft_case_rrarrb(stacks, stacks->stack_a->number);

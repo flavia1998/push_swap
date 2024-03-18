@@ -2,7 +2,7 @@
 
 int is_stack_sorted(t_stacks *stacks)
 {
-	stack_t *aux;
+	t_stack *aux;
 	aux = stacks->stack_a;
 
 	while (aux)
@@ -17,7 +17,7 @@ int is_stack_sorted(t_stacks *stacks)
 }
 
 // This function returns the last element of the stack.
-stack_t *lstlast(stack_t *lst)
+t_stack *lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -28,7 +28,7 @@ stack_t *lstlast(stack_t *lst)
 
 // This function finds and returns the smallest number
 // in the given stack.
-int ft_min(stack_t *a)
+int ft_min(t_stack *a)
 {
 	int i;
 
@@ -44,7 +44,7 @@ int ft_min(stack_t *a)
 
 // This function finds and returns the biggest number
 // in the given stack.
-int ft_max(stack_t *a)
+int ft_max(t_stack *a)
 {
 	int i;
 

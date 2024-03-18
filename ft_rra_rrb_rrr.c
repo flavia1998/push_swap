@@ -2,8 +2,8 @@
 
 void rra_log(t_stacks *stacks, int log)
 {
-    stack_t *last_element;
-    stack_t *before_last_element;
+    t_stack *last_element;
+    t_stack *before_last_element;
 
     last_element = stacks->stack_a;
 
@@ -23,8 +23,8 @@ void rra_log(t_stacks *stacks, int log)
 
 void rrb_log(t_stacks *stacks, int log)
 {
-    stack_t *last_element;
-    stack_t *before_last_element;
+    t_stack *last_element;
+    t_stack *before_last_element;
 
     last_element = stacks->stack_b;
 

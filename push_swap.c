@@ -38,8 +38,8 @@ void free_stacks(t_stacks *stacks)
 
 void print_stacks(t_stacks *stacks)
 {
-	stack_t *aux_a = stacks->stack_a;
-	stack_t *aux_b = stacks->stack_b;
+	t_stack *aux_a = stacks->stack_a;
+	t_stack *aux_b = stacks->stack_b;
 
 	printf("-------\n");
 	printf("[A]  [B]\n");
@@ -78,7 +78,7 @@ int check_arg(char **argv)
 int main(int argc, char **argv)
 {
 	t_stacks *stacks = NULL;
-	stacks = malloc(sizeof(stack_t));
+	stacks = malloc(sizeof(t_stack));
 
 	if (argc < 2)
 		return 0;

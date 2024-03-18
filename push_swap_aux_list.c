@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-stack_t *create_node(int number)
+t_stack *create_node(int number)
 {
-	stack_t *new_node;
-	new_node = (stack_t *)malloc(sizeof(stack_t));
+	t_stack *new_node;
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	new_node->number = number;
 	new_node->next = NULL;
 
 	return new_node;
 }
 
-void push_start(stack_t **head, int number)
+void push_start(t_stack **head, int number)
 {
 	if (head == NULL)
 	{
@@ -30,14 +30,14 @@ void push_start(stack_t **head, int number)
 		return;
 	}
 
-	stack_t *new_node;
+	t_stack *new_node;
 	new_node = create_node(number);
 
 	new_node->next = *head;
 	*head = new_node;
 }
 
-void push_end(stack_t *head, int number)
+void push_end(t_stack *head, int number)
 {
 	if (head == NULL)
 	{
@@ -45,10 +45,10 @@ void push_end(stack_t *head, int number)
 		return;
 	}
 
-	stack_t *new_node;
+	t_stack *new_node;
 	new_node = create_node(number);
 
-	stack_t *aux = head;
+	t_stack *aux = head;
 	while (aux->next)
 	{
 		aux = aux->next;
@@ -57,9 +57,9 @@ void push_end(stack_t *head, int number)
 	aux->next = new_node;
 }
 
-void print_list(stack_t *head)
+void print_list(t_stack *head)
 {
-	stack_t *aux = head;
+	t_stack *aux = head;
 
 	while (aux)
 	{
@@ -68,7 +68,7 @@ void print_list(stack_t *head)
 	}
 }
 
-stack_t *pop(stack_t **head)
+t_stack *pop(t_stack **head)
 {
 	if (head == NULL)
 	{
@@ -76,7 +76,7 @@ stack_t *pop(stack_t **head)
 		return NULL;
 	}
 
-    stack_t *removed_node = *head;
+    t_stack *removed_node = *head;
     *head = (*head)->next;
 
     return removed_node;

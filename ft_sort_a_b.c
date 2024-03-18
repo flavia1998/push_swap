@@ -18,7 +18,7 @@ void sort_stack(t_stacks *stacks)
 void ft_sort_b_till_3(t_stacks *stacks)
 {
 	int i;
-	stack_t *tmp;
+	t_stack *tmp;
 
 	while (count_nodes(stacks->stack_a) > 3 && !is_stack_sorted(stacks))
 	{
@@ -63,7 +63,7 @@ void ft_sort_b(t_stacks *stacks)
 void ft_sort_a(t_stacks *stacks)
 {
 	int i;
-	stack_t *tmp;
+	t_stack *tmp;
 	tmp = stacks->stack_b;
 
 	while (stacks->stack_b)

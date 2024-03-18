@@ -2,7 +2,7 @@
 
 void pa(t_stacks *stacks)
 {
-    stack_t *stack_b_next;
+    t_stack *stack_b_next;
 
     if (stacks->stack_b == NULL)
     {
@@ -19,7 +19,7 @@ void pa(t_stacks *stacks)
 
 void pb(t_stacks *stacks)
 {
-    stack_t *stack_a_next;
+    t_stack *stack_a_next;
 
     if (stacks->stack_a == NULL)
     {

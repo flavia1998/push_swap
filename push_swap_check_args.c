@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int ft_check_duplicates(stack_t *stack)
+int ft_check_duplicates(t_stack *stack)
 {
-	stack_t *tmp;
+	t_stack *tmp;
 
 	while (stack)
 	{
@@ -65,9 +65,9 @@ int ft_atoll(const char *str)
 	return (mod * i);
 }
 
-int count_nodes(stack_t *head)
+int count_nodes(t_stack *head)
 {
-	stack_t *aux;
+	t_stack *aux;
 	aux = head;
 	int i;
 

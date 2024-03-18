@@ -2,7 +2,7 @@
 
 // This function checks the index of a number
 // 	 in the stack.
-int ft_find_index(stack_t *a, int number)
+int ft_find_index(t_stack *a, int number)
 {
 	int i;
 
@@ -23,8 +23,8 @@ int ft_find_place_b(t_stacks *stacks, int nbr_push)
 {
 	
 	int i;
-	stack_t *tmp;
-	stack_t *stack_b = stacks->stack_b;
+	t_stack *tmp;
+	t_stack *stack_b = stacks->stack_b;
 
 	i = 1;
 	if (nbr_push > stack_b->number && nbr_push < lstlast(stack_b)->number)
@@ -50,8 +50,8 @@ int ft_find_place_b(t_stacks *stacks, int nbr_push)
 int ft_find_place_a(t_stacks *stacks, int nbr_push)
 {
 	int i;
-	stack_t *tmp;
-	stack_t *stack_a = stacks->stack_a;
+	t_stack *tmp;
+	t_stack *stack_a = stacks->stack_a;
 
 	i = 1;
 	if (nbr_push < stack_a->number && nbr_push > lstlast(stack_a)->number)
