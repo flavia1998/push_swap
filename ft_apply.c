@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_apply.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 18:46:07 by fvieira-          #+#    #+#             */
+/*   Updated: 2024/03/27 18:47:07 by fvieira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// This function rotates both stack_a and stack_b
-// in the same direction as required amount.
-int ft_apply_rarb(t_stacks *stacks, int c, char s)
+int	ft_apply_rarb(t_stacks *stacks, int c, char s)
 {
 	if (s == 'a')
 	{
@@ -27,9 +37,7 @@ int ft_apply_rarb(t_stacks *stacks, int c, char s)
 	return (-1);
 }
 
-// This function rotate both stack_a and stack_b in the
-// reverse direction as required amount.
-int ft_apply_rrarrb(t_stacks *stacks, int c, char s)
+int	ft_apply_rrarrb(t_stacks *stacks, int c, char s)
 {
 	if (s == 'a')
 	{
@@ -54,9 +62,7 @@ int ft_apply_rrarrb(t_stacks *stacks, int c, char s)
 	return (-1);
 }
 
-// This function rotate the stack_a in reverse direction,
-// the stack_b in oppsite direction of stack_a as required amount.
-int ft_apply_rrarb(t_stacks *stacks, int c, char s)
+int	ft_apply_rrarb(t_stacks *stacks, int c, char s)
 {
 	if (s == 'a')
 	{
@@ -77,9 +83,7 @@ int ft_apply_rrarb(t_stacks *stacks, int c, char s)
 	return (-1);
 }
 
-// This function rotate the stack_b in reverse direction,
-// the stack_a in oppsite direction of stack_a as required amount.
-int ft_apply_rarrb(t_stacks *stacks, int c, char s)
+int	ft_apply_rarrb(t_stacks *stacks, int c, char s)
 {
 	if (s == 'a')
 	{

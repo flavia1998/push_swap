@@ -1,23 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_aux.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 18:47:26 by fvieira-          #+#    #+#             */
+/*   Updated: 2024/03/27 18:47:26 by fvieira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int is_stack_sorted(t_stacks *stacks)
+int	is_stack_sorted(t_stacks *stacks)
 {
-	t_stack *aux;
-	aux = stacks->stack_a;
+	t_stack	*aux;
 
+	aux = stacks->stack_a;
 	while (aux)
 	{
 		if (aux->next && aux->number > aux->next->number)
 		{
-			return 0;
+			return (0);
 		}
 		aux = aux->next;
 	}
-	return 1;
+	return (1);
 }
 
-// This function returns the last element of the stack.
-t_stack *lstlast(t_stack *lst)
+t_stack	*lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -26,11 +37,9 @@ t_stack *lstlast(t_stack *lst)
 	return (lst);
 }
 
-// This function finds and returns the smallest number
-// in the given stack.
-int ft_min(t_stack *a)
+int	ft_min(t_stack *a)
 {
-	int i;
+	int	i;
 
 	i = a->number;
 	while (a)
@@ -42,11 +51,9 @@ int ft_min(t_stack *a)
 	return (i);
 }
 
-// This function finds and returns the biggest number
-// in the given stack.
-int ft_max(t_stack *a)
+int	ft_max(t_stack *a)
 {
-	int i;
+	int	i;
 
 	i = a->number;
 	while (a)
@@ -58,11 +65,8 @@ int ft_max(t_stack *a)
 	return (i);
 }
 
-// This function sort the stack if there are only
-// three elements in the stack.
-void ft_sort_three(t_stacks *stacks)
+void	ft_sort_three(t_stacks *stacks)
 {
-
 	if (ft_min(stacks->stack_a) == stacks->stack_a->number)
 	{
 		rra(stacks);

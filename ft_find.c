@@ -1,10 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 18:52:59 by fvieira-          #+#    #+#             */
+/*   Updated: 2024/03/27 18:52:59 by fvieira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// This function checks the index of a number
-// 	 in the stack.
-int ft_find_index(t_stack *a, int number)
+int	ft_find_index(t_stack *a, int number)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (a->number != number)
@@ -16,16 +26,13 @@ int ft_find_index(t_stack *a, int number)
 	return (i);
 }
 
-// This function finds the correct place of the number in stack_b.
-// In other words, it check what index number nbr_push will get
-// after it is being pushed to the stack_b.
-int ft_find_place_b(t_stacks *stacks, int nbr_push)
+int	ft_find_place_b(t_stacks *stacks, int nbr_push)
 {
-	
-	int i;
-	t_stack *tmp;
-	t_stack *stack_b = stacks->stack_b;
+	int		i;
+	t_stack	*tmp;
+	t_stack	*stack_b;
 
+	stack_b = stacks->stack_b;
 	i = 1;
 	if (nbr_push > stack_b->number && nbr_push < lstlast(stack_b)->number)
 		i = 0;
@@ -44,15 +51,13 @@ int ft_find_place_b(t_stacks *stacks, int nbr_push)
 	return (i);
 }
 
-// This function finds the correct place of the number in stack_a.
-// In other words, it check what index number nbr_push will get
-// after it is being pushed to the stack_a.
-int ft_find_place_a(t_stacks *stacks, int nbr_push)
+int	ft_find_place_a(t_stacks *stacks, int nbr_push)
 {
-	int i;
-	t_stack *tmp;
-	t_stack *stack_a = stacks->stack_a;
+	int		i;
+	t_stack	*tmp;
+	t_stack	*stack_a;
 
+	stack_a = stacks->stack_a;
 	i = 1;
 	if (nbr_push < stack_a->number && nbr_push > lstlast(stack_a)->number)
 		i = 0;
@@ -70,4 +75,3 @@ int ft_find_place_a(t_stacks *stacks, int nbr_push)
 	}
 	return (i);
 }
-

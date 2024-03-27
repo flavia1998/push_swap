@@ -1,14 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 19:10:05 by fvieira-          #+#    #+#             */
+/*   Updated: 2024/03/27 19:10:05 by fvieira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-// This function calculate and decides which rotation
-// combination is best to use to sort the stack. Of
-// course, after rotation there is always one push
-// operation is left to do which i embeded to code.
-// Function is used during push from B to A.
-int ft_rotate_type_ba(t_stacks *stacks)
+int	ft_rotate_type_ba(t_stacks *stacks)
 {
-	int i;
-	t_stack *tmp;
+	int		i;
+	t_stack	*tmp;
 
 	tmp = stacks->stack_b;
 	i = ft_case_rrarrb_a(stacks, stacks->stack_b->number);
@@ -27,15 +34,10 @@ int ft_rotate_type_ba(t_stacks *stacks)
 	return (i);
 }
 
-// This function calculate and decides which rotation
-// combination is best to use to sort the stack. Of
-// course, after rotation there is always one push
-// operation is left to do which i embeded to code.
-// Function is used during push from A to B.
-int ft_rotate_type_ab(t_stacks *stacks)
+int	ft_rotate_type_ab(t_stacks *stacks)
 {
-	int i;
-	t_stack *tmp;
+	int		i;
+	t_stack	*tmp;
 
 	tmp = stacks->stack_a;
 	i = ft_case_rrarrb(stacks, stacks->stack_a->number);
