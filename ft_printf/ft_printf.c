@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:09:51 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/05/24 14:59:40 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/03/27 20:18:42 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	calling_funtions(va_list args, char c)
 }
 
 int	ft_printf(const char *str, ...)
-{	
+{
 	int			total_param;
 	int			i;
 	va_list		args;

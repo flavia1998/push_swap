@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_sb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 15:05:27 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/03/27 20:20:05 by fvieira-         ###   ########.fr       */
+/*   Created: 2024/03/27 19:47:36 by fvieira-          #+#    #+#             */
+/*   Updated: 2024/03/27 19:48:04 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	sb_log(t_stacks *stacks, int log)
 {
-	char	*src1;
-	char	*dest1;	
+	swap_first_two(&stacks->stack_b);
+	if (log == 1)
+		write(1, "sb\n", 3);
+}
 
-	dest1 = (char *)dest;
-	src1 = (char *)src;
-	if (src == NULL && dest == NULL)
-		return (NULL);
-	if (src1 < dest1)
-	{
-		while (n--)
-		{
-			dest1[n] = src1[n];
-		}
-	}
-	else
-		ft_memcpy (dest1, src1, n);
-	return (dest);
+void	sb(t_stacks *stacks)
+{
+	sb_log(stacks, 1);
 }

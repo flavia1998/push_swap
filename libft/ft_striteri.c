@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:57:31 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/28 16:19:25 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/03/27 20:19:37 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		f (i, &s[i]);
 		i++;
-	}	
+	}
 }

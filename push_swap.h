@@ -6,7 +6,7 @@
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:05:53 by flavia            #+#    #+#             */
-/*   Updated: 2024/03/27 17:53:05 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/03/27 19:47:19 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,8 @@ void	ft_error(void);
 int		ft_check_duplicates(t_stack *stack);
 void	fill_stack(int argc, char **argv, t_stacks *stacks);
 void	clean_nodes(t_stack *stack);
+void	sb(t_stacks *stacks);
+void	sb_log(t_stacks *stacks, int log);
+void	swap_first_two(t_stack **head);
 
 #endif

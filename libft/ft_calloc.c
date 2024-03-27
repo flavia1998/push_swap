@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 17:53:11 by fvieira-          #+#    #+#             */
-/*   Updated: 2023/04/19 12:23:26 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/03/27 20:19:18 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nitems, size_t size)
 	void	*new_array;
 
 	if (size == 0)
-	{	
+	{
 		new_array = malloc(1);
 		return (new_array);
 	}
