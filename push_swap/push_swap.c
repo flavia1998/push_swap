@@ -6,7 +6,7 @@
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:37:38 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/04/10 15:29:20 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:55:47 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,7 @@ int	main(int argc, char **argv)
 
 	stacks = NULL;
 	stacks = malloc(sizeof(t_stacks));
-	if (!stacks)
-		return (1);
-	if (argc < 2)
+	if (!stacks || argc < 2)
 	{
 		free(stacks);
 		return (0);
@@ -97,6 +95,11 @@ int	main(int argc, char **argv)
 	{
 		ft_error();
 		free_stacks(stacks);
+	}
+	if (is_stack_sorted(stacks))
+	{
+		free_stacks(stacks);
+		return (0);
 	}
 	sort_stack(stacks);
 	free_stacks(stacks);
