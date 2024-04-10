@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
+/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:37:38 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/03/27 18:09:05 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:29:20 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,12 @@ int	main(int argc, char **argv)
 	stacks = NULL;
 	stacks = malloc(sizeof(t_stacks));
 	if (!stacks)
-		return (0);
+		return (1);
 	if (argc < 2)
+	{
+		free(stacks);
 		return (0);
+	}
 	if (check_arg(argv) == 0)
 		ft_error();
 	fill_stack(argc, argv, stacks);
