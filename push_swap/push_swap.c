@@ -6,7 +6,7 @@
 /*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:37:38 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/04/10 15:55:47 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:48:47 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,10 @@ int	main(int argc, char **argv)
 	fill_stack(argc, argv, stacks);
 	if (ft_check_duplicates(stacks->stack_a) == 1)
 	{
-		ft_error();
 		free_stacks(stacks);
+		ft_error();
 	}
-	if (is_stack_sorted(stacks))
+	if (is_stack_sorted(stacks) == 1)
 	{
 		free_stacks(stacks);
 		return (0);
