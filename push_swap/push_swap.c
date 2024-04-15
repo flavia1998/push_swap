@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvieira- <fvieira-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:37:38 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/04/10 16:48:47 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:00:29 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	fill_stack(int argc, char **argv, t_stacks *stacks)
 
 	i = 1;
 	stacks->stack_a = NULL;
+	stacks->stack_b = NULL;
 	while (i < argc)
 	{
 		number = ft_atoll(argv[i]);

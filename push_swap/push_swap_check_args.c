@@ -6,7 +6,7 @@
 /*   By: fvieira- < fvieira-@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:07:11 by fvieira-          #+#    #+#             */
-/*   Updated: 2024/03/27 18:10:36 by fvieira-         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:30:00 by fvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,12 @@ int	count_nodes(t_stack *head)
 void	clean_nodes(t_stack *stack)
 {
 	t_stack	*aux;
-	t_stack	*temp;
 
 	aux = stack;
 	while (aux)
 	{
-		temp = aux->next;
+		stack = aux->next;
 		free(aux);
-		aux = temp;
+		aux = stack;
 	}
 }
