@@ -55,13 +55,16 @@ int	ft_atoll(const char *str)
 		str++;
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
-			ft_error();
+		 if (!ft_isdigit(*str))
+			return (0);
 		i = i * 10 + (*str - 48);
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		ft_error();
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}	
 	return (mod * i);
 }
 

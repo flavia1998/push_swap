@@ -89,7 +89,7 @@ int	main(int argc, char **argv)
 		free(stacks);
 		return (0);
 	}
-	if (check_arg(argv) == 0)
+	if (check_arg(argv) == 0 )
 		ft_error();
 	fill_stack(argc, argv, stacks);
 	if (ft_check_duplicates(stacks->stack_a) == 1)
