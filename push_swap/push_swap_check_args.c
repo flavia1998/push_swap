@@ -36,7 +36,7 @@ int ft_error(t_stacks *stacks, int free_stack)
 		free_stacks(stacks);
 	else 
 		free(stacks);
-		
+
 	write(2, "Error\n", 6);
 
 	return 1;
@@ -63,6 +63,20 @@ t_int_or_error create_success(int value){
 	return result;
 }
 
+t_int_or_error ft_atoll_parse(const char *str, long long int i, int mod)
+{
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (create_error());
+		i = i * 10 + (*str - 48);
+		str++;
+	}
+	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
+		return (create_error());
+	return (create_success(mod * i));
+}
+
 t_int_or_error ft_atoll(const char *str)
 {
 	int mod;
@@ -79,16 +93,9 @@ t_int_or_error ft_atoll(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
-			return (create_error());
-		i = i * 10 + (*str - 48);
-		str++;
-	}
-	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		return (create_error());
-	return (create_success(mod * i));
+	if (!*str)
+		return create_error();
+	return ft_atoll_parse(str, i, mod);
 }
 
 int count_nodes(t_stack *head)
