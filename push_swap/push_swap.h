@@ -84,7 +84,7 @@ int		ft_case_rarrb(t_stacks *stacks, int c);
 void	ft_sort_b_till_3(t_stacks *stacks);
 void	ft_sort_b(t_stacks *stacks);
 void	ft_sort_a(t_stacks *stacks);
-int		ft_error(t_stacks *stacks);
+int		ft_error(t_stacks *stacks, int free_stack);
 int		ft_check_duplicates(t_stack *stack);
 int		fill_stack(int argc, char **argv, t_stacks *stacks);
 void	clean_nodes(t_stack *stack);

@@ -96,12 +96,13 @@ int	main(int argc, char **argv)
 		free(stacks);
 		return (0);
 	}
-	if (check_arg(argv) == 0)
-		return ft_error(stacks);
+	if (check_arg(argv) == 0){
+		return ft_error(stacks, 0);
+	}
 	if (fill_stack(argc, argv, stacks) == 0)
-		return ft_error(stacks);
+		return ft_error(stacks, 0);
 	if (ft_check_duplicates(stacks->stack_a) == 1)
-		return ft_error(stacks);
+		return ft_error(stacks, 0);
 	if (is_stack_sorted(stacks) == 1)
 	{
 		free_stacks(stacks);
