@@ -30,13 +30,14 @@ int	ft_check_duplicates(t_stack *stack)
 	return (0);
 }
 
-void ft_error(void)
+int ft_error(t_stacks *stacks)
 {
+	free_stacks(stacks);
 	write(2, "Error\n", 6);
-	exit(1);
+	return 1;
 }
 
-int is_invalid_char(char *str)
+int is_invalid_char(const char *str)
 {
 	if (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' || *str == '\v' || *str == '\r')
 		return 1;
