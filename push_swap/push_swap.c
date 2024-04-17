@@ -15,23 +15,21 @@
 
 int	fill_stack(int argc, char **argv, t_stacks *stacks)
 {
-	int	number;
 	int	i;
+	t_int_or_error result;
 
 	i = 1;
 	stacks->stack_a = NULL;
 	stacks->stack_b = NULL;
 	while (i < argc)
 	{
-		number = ft_atoll(argv[i]);
-		if (number == -1)
-		{
+		result = ft_atoll(argv[i]);
+		if (result.is_error)
 			return 0;
-		}
 		if (stacks->stack_a == NULL)
-			stacks->stack_a = create_node(number);
+			stacks->stack_a = create_node(result.value);
 		else
-			push_end(stacks->stack_a, number);
+			push_end(stacks->stack_a, result.value);
 		i++;
 	}
 

@@ -19,6 +19,12 @@
 # include "ft_printf.h"
 # include <limits.h>
 
+typedef struct int_or_error
+{
+   int value;
+   int is_error;
+} t_int_or_error;
+
 typedef struct stack
 {
 	int				number;
@@ -32,7 +38,7 @@ typedef struct stacks
 	struct stack	*stack_b;
 }	t_stacks;
 
-int		ft_atoll(const char *nptr);
+t_int_or_error	ft_atoll(const char *nptr);
 t_stack	*create_node(int number);
 void	push_start(t_stack **head, int number);
 void	push_end(t_stack *head, int number);

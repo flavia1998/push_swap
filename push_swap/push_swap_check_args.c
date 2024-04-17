@@ -43,12 +43,27 @@ int is_invalid_char(char *str)
 	return 0;
 }
 
-int ft_atoll(const char *str)
+t_int_or_error create_error(){
+	t_int_or_error result;
+	result.value = 0;
+	result.is_error = 1;
+	return result;
+}
+
+t_int_or_error create_success(int value){
+	t_int_or_error result;
+	result.value = value;
+	result.is_error = 0;
+	return result;
+}
+
+t_int_or_error ft_atoll(const char *str)
 {
 	int mod;
 	long long int i;
 	i = 0;
 	mod = 1;
+
 	while (is_invalid_char(str) == 1)
 		str++;
 	if (*str == '-')
@@ -61,13 +76,13 @@ int ft_atoll(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			return (-1);
+			return (create_error());
 		i = i * 10 + (*str - 48);
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-		return (-1);
-	return (mod * i);
+		return (create_error());
+	return (create_success(mod * i));
 }
 
 int count_nodes(t_stack *head)
