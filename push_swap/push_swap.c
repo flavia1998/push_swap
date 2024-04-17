@@ -38,9 +38,12 @@ int	fill_stack(int argc, char **argv, t_stacks *stacks)
 
 void	free_stacks(t_stacks *stacks)
 {
-	clean_nodes(stacks->stack_a);
-	clean_nodes(stacks->stack_b);
-	free(stacks);
+	if (stacks->stack_a)
+		clean_nodes(stacks->stack_a);
+	if (stacks->stack_b)
+		clean_nodes(stacks->stack_b);
+	if (stacks)
+		free(stacks);
 }
 
 void	print_stacks(t_stacks *stacks)

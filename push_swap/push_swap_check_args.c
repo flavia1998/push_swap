@@ -32,8 +32,11 @@ int	ft_check_duplicates(t_stack *stack)
 
 int ft_error(t_stacks *stacks)
 {
-	free_stacks(stacks);
+	if (stacks)
+		free_stacks(stacks);
+
 	write(2, "Error\n", 6);
+
 	return 1;
 }
 
