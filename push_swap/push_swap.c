@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void	fill_stack(int argc, char **argv, t_stacks *stacks)
+int	fill_stack(int argc, char **argv, t_stacks *stacks)
 {
 	int	number;
 	int	i;
@@ -24,12 +24,18 @@ void	fill_stack(int argc, char **argv, t_stacks *stacks)
 	while (i < argc)
 	{
 		number = ft_atoll(argv[i]);
+		if (number == -1)
+		{
+			return 0;
+		}
 		if (stacks->stack_a == NULL)
 			stacks->stack_a = create_node(number);
 		else
 			push_end(stacks->stack_a, number);
 		i++;
 	}
+
+	return 1;
 }
 
 void	free_stacks(t_stacks *stacks)
@@ -91,7 +97,10 @@ int	main(int argc, char **argv)
 	}
 	if (check_arg(argv) == 0 )
 		ft_error();
-	fill_stack(argc, argv, stacks);
+	if (fill_stack(argc, argv, stacks) == 0){
+		free_stacks(stacks);
+		return (0);
+	}
 	if (ft_check_duplicates(stacks->stack_a) == 1)
 	{
 		free_stacks(stacks);

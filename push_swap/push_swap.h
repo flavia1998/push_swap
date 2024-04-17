@@ -80,7 +80,7 @@ void	ft_sort_b(t_stacks *stacks);
 void	ft_sort_a(t_stacks *stacks);
 void	ft_error(void);
 int		ft_check_duplicates(t_stack *stack);
-void	fill_stack(int argc, char **argv, t_stacks *stacks);
+int		fill_stack(int argc, char **argv, t_stacks *stacks);
 void	clean_nodes(t_stack *stack);
 void	sb(t_stacks *stacks);
 void	sb_log(t_stacks *stacks, int log);

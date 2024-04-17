@@ -14,7 +14,7 @@
 
 int	ft_check_duplicates(t_stack *stack)
 {
-	t_stack	*tmp;
+	t_stack *tmp;
 
 	while (stack)
 	{
@@ -30,21 +30,26 @@ int	ft_check_duplicates(t_stack *stack)
 	return (0);
 }
 
-void	ft_error(void)
+void ft_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
-int	ft_atoll(const char *str)
+int is_invalid_char(char *str)
 {
-	int				mod;
-	long long int	i;
+	if (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' || *str == '\v' || *str == '\r')
+		return 1;
+	return 0;
+}
 
+int ft_atoll(const char *str)
+{
+	int mod;
+	long long int i;
 	i = 0;
 	mod = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\f' || *str == '\v' || *str == '\r')
+	while (is_invalid_char(str) == 1)
 		str++;
 	if (*str == '-')
 	{
@@ -55,23 +60,20 @@ int	ft_atoll(const char *str)
 		str++;
 	while (*str)
 	{
-		 if (!ft_isdigit(*str))
-			return (0);
+		if (!ft_isdigit(*str))
+			return (-1);
 		i = i * 10 + (*str - 48);
 		str++;
 	}
 	if ((mod * i) > 2147483647 || (mod * i) < -2147483648)
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}	
+		return (-1);
 	return (mod * i);
 }
 
-int	count_nodes(t_stack *head)
+int count_nodes(t_stack *head)
 {
-	t_stack	*aux;
-	int		i;
+	t_stack *aux;
+	int i;
 
 	aux = head;
 	i = 0;
@@ -83,9 +85,9 @@ int	count_nodes(t_stack *head)
 	return (i);
 }
 
-void	clean_nodes(t_stack *stack)
+void clean_nodes(t_stack *stack)
 {
-	t_stack	*aux;
+	t_stack *aux;
 
 	aux = stack;
 	while (aux)
