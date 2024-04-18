@@ -14,38 +14,50 @@
 
 void	rra_log(t_stacks *stacks, int log)
 {
-	t_stack	*last_element;
-	t_stack	*before_last_element;
+	t_stack	*tmp;
+	int		i;
 
-	last_element = stacks->stack_a;
-	while (last_element->next)
+	if (!stacks->stack_a || !stacks->stack_a->next)
+		return ;
+	i = 0;
+	tmp = stacks->stack_a;
+	while (stacks->stack_a->next)
 	{
-		last_element = last_element->next;
-		if (last_element->next != NULL)
-			before_last_element = last_element;
+		stacks->stack_a = stacks->stack_a->next;
+		i++;
 	}
-	last_element->next = stacks->stack_a;
-	stacks->stack_a = last_element;
-	before_last_element->next = NULL;
+	stacks->stack_a->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
 	if (log == 1)
 		write(1, "rra\n", 4);
 }
 
 void	rrb_log(t_stacks *stacks, int log)
 {
-	t_stack	*last_element;
-	t_stack	*before_last_element;
+	t_stack	*tmp;
+	int		i;
 
-	last_element = stacks->stack_b;
-	while (last_element->next)
+	if (!stacks->stack_b || !stacks->stack_b->next)
+		return ;
+	i = 0;
+	tmp = stacks->stack_b;
+	while (stacks->stack_b->next)
 	{
-		last_element = last_element->next;
-		if (last_element->next != NULL)
-			before_last_element = last_element;
+		i++;
+		stacks->stack_b = stacks->stack_b->next;
 	}
-	last_element->next = stacks->stack_b;
-	stacks->stack_b = last_element;
-	before_last_element->next = NULL;
+	stacks->stack_b->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
 	if (log == 1)
 		write(1, "rrb\n", 4);
 }
